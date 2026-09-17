@@ -1,0 +1,27 @@
+{
+  "profile_name": "Street Photography",
+  "mode": "move",
+  "duplicate_strategy": "rename",
+  "bindings": {
+    "1": {
+      "folder": "Candid",
+      "label": "Momen Spontan"
+    },
+    "2": {
+      "folder": "Arsitektur",
+      "label": "Gedung & Sudut Kota"
+    },
+    "3": {
+      "folder": "Portrait",
+      "label": "Potret Jalanan"
+    },
+    "4": {
+      "folder": "BW_Candidate",
+      "label": "Kandidat Hitam Putih"
+    },
+    "Delete": {
+      "folder": "_Ditolak",
+      "label": "Out of Focus / Miskin Komposisi"
+    }
+  }
+}

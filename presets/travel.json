@@ -1,0 +1,27 @@
+{
+  "profile_name": "Liburan & Traveling",
+  "mode": "move",
+  "duplicate_strategy": "rename",
+  "bindings": {
+    "1": {
+      "folder": "Pemandangan",
+      "label": "Landscape & Alam"
+    },
+    "2": {
+      "folder": "Kuliner",
+      "label": "Makanan & Minuman"
+    },
+    "3": {
+      "folder": "Orang_Potret",
+      "label": "Potret Liburan"
+    },
+    "4": {
+      "folder": "Hotel_Transport",
+      "label": "Akomodasi & Transport"
+    },
+    "Delete": {
+      "folder": "_Sampah",
+      "label": "Blur / Gagal"
+    }
+  }
+}

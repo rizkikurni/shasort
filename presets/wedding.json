@@ -1,0 +1,27 @@
+{
+  "profile_name": "Wedding Sorter",
+  "mode": "move",
+  "duplicate_strategy": "rename",
+  "bindings": {
+    "1": {
+      "folder": "Close_Up",
+      "label": "Foto Close Up"
+    },
+    "2": {
+      "folder": "Foto_Bareng",
+      "label": "Group Photos"
+    },
+    "3": {
+      "folder": "Dokumentasi",
+      "label": "Dokumentasi Umum"
+    },
+    "4": {
+      "folder": "Dekorasi",
+      "label": "Detail & Dekorasi"
+    },
+    "Delete": {
+      "folder": "_Rejected",
+      "label": "Foto Ditolak / Blur"
+    }
+  }
+}
