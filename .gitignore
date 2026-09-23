@@ -1,0 +1,17 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller / Packaging
+dist/
+build/
+*.spec
+
+# User runtime settings
+user_settings.json
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp

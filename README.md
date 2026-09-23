@@ -43,16 +43,35 @@ Aplikasi sortir foto desktop berkecepatan tinggi berbasis **PyQt6** yang diranca
 
 ## Cara Menjalankan
 
-1. Pastikan dependensi terpasang:
-   ```bash
-   pip install PyQt6 pillow
-   ```
-2. Jalankan aplikasi:
+1. Menjalankan via Python:
    ```bash
    python main.py
    ```
-3. Menjalankan pengujian otomatis (Unit & Integration Tests):
+2. Menjalankan pengujian otomatis:
    ```bash
    python tests/test_sorter.py
    python tests/test_ui_flow.py
    ```
+
+---
+
+## Cara Membuat Aplikasi PC (.exe)
+
+Anda dapat mengompilasi ShaSort menjadi file `.exe` Windows mandiri tanpa memerlukan terminal:
+
+### Opsi 1: Folder Bundle (Direkomendasikan - Startup Cepat 0.1s)
+Klik dua kali file `build.bat` atau jalankan perintah:
+```bash
+python -m PyInstaller --noconsole --onedir --name "ShaSort" --add-data "presets;presets" --clean -y main.py
+```
+Hasil file `.exe` berada di folder:
+`dist\ShaSort\ShaSort.exe`
+
+### Opsi 2: Single-File Portable (.exe Tunggal)
+Klik dua kali file `build_onefile.bat` atau jalankan perintah:
+```bash
+python -m PyInstaller --noconsole --onefile --name "ShaSort" --add-data "presets;presets" --clean -y main.py
+```
+Hasil file tunggal siap pakai berada di:
+`dist\ShaSort.exe`
+

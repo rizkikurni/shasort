@@ -4,9 +4,21 @@ import re
 from pathlib import Path
 from typing import Dict, Any, List, Optional, Tuple
 
-APP_ROOT = Path(__file__).resolve().parent.parent
-PRESETS_DIR = APP_ROOT / "presets"
-USER_SETTINGS_PATH = APP_ROOT / "user_settings.json"
+import sys
+import shutil
+
+if getattr(sys, 'frozen', False):
+    # Running as compiled executable (.exe)
+    EXE_DIR = Path(sys.executable).parent
+    BUNDLE_DIR = Path(getattr(sys, '_MEIPASS', EXE_DIR))
+    PRESETS_DIR = EXE_DIR / "presets"
+    USER_SETTINGS_PATH = EXE_DIR / "user_settings.json"
+    BUNDLED_PRESETS_DIR = BUNDLE_DIR / "presets"
+else:
+    APP_ROOT = Path(__file__).resolve().parent.parent
+    PRESETS_DIR = APP_ROOT / "presets"
+    USER_SETTINGS_PATH = APP_ROOT / "user_settings.json"
+    BUNDLED_PRESETS_DIR = PRESETS_DIR
 
 DEFAULT_PROFILE = {
     "profile_name": "Wedding Sorter",
@@ -27,6 +39,15 @@ class ConfigManager:
     @staticmethod
     def ensure_directories():
         PRESETS_DIR.mkdir(parents=True, exist_ok=True)
+        # If running from exe and local presets folder is empty, copy bundled presets
+        if BUNDLED_PRESETS_DIR.is_dir() and BUNDLED_PRESETS_DIR != PRESETS_DIR:
+            for default_file in BUNDLED_PRESETS_DIR.glob("*.json"):
+                target = PRESETS_DIR / default_file.name
+                if not target.exists():
+                    try:
+                        shutil.copy2(default_file, target)
+                    except Exception:
+                        pass
 
     @staticmethod
     def sanitize_folder_name(name: str) -> str:
